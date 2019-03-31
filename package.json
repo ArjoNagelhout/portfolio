@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ArjoNagelhout/portfolio#readme",
   "dependencies": {
+    "@vue/cli": "^3.5.3",
     "vue": "^2.6.10"
   }
 }

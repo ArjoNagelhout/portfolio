@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-vue-cli-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0"
+  },
+  "dependencies": {
+    "vue-router": "^3.0.2"
+  }
+}
