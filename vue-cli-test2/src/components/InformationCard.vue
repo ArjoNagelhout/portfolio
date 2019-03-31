@@ -5,12 +5,12 @@
 		</div>
 		<div id="about_container">
 			<h1>Arjo Nagelhout</h1>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+			<p>The one thing you need to know about me is that I'm crazy enthusiastic about augmented reality. </p>
 		</div>
 		<div id="navigation_container">
 			<div v-for="navigation_element in navigation_elements" :key="navigation_element.id">
 			
-				<a v-bind:href="navigation_element.url" target="_blank">{{navigation_element.name}} →</a>
+				<a v-bind:href="navigation_element.url" :target="get_target(navigation_element)">{{navigation_element.text}} →</a>
 
 			</div>
 		</div>
@@ -24,14 +24,27 @@ export default {
 		return {
 			navigation_elements: [
 				{
-					name: "GitHub",
-					url: "https://www.github.com/ArjoNagelhout"
+					text: "Send me an email",
+					url: "mailto:arjo.nagelhout@gmail.com",
+					open_in_new_tab: false
+
 				},
 				{
-					name: "YouTube",
-					url: "https://www.youtube.com/channel/UCRK8NToksymdD7sqNj1gbcQ"
+					text: "GitHub",
+					url: "https://www.github.com/ArjoNagelhout",
+					open_in_new_tab: true
+				},
+				{
+					text: "YouTube",
+					url: "https://www.youtube.com/channel/UCRK8NToksymdD7sqNj1gbcQ",
+					open_in_new_tab: true
 				}
 			]
+		}
+	},
+	methods: {
+		get_target(navigation_element) {
+			return (navigation_element.open_in_new_tab ? "_blank" : "_self")
 		}
 	},
 	props: {
@@ -41,5 +54,20 @@ export default {
 </script>
 
 <style scoped>
+
+#information_container {
+	display:grid;
+	grid-template-columns: 200px auto 200px;
+	max-width:800px;
+	margin:auto;
+}
+
+#information_container div {
+	border:1px solid black;
+}
+
+img {
+	max-width:100%;
+}
 
 </style>
