@@ -1,7 +1,11 @@
 <template>
 	<div id="timeline_container">
+		<div id="dates_container">
+		</div>
+		<div id="places_container">
+		</div>
 		<div id="projects_container">
-			<div class="project_container" v-for="project in projects" :key="project.id">
+			<div class="project_container" v-for="project in projects" :key="project.id" v-bind:style="{ top: project.top + 'px' }">
 				<h1 class="project_title">{{project.title}}</h1>
 				<h2 class="project_subtitle">{{project.subtitle}}</h2>
 				<div class="project_content">
@@ -11,10 +15,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="middle_container">
-		</div>
-		<div id="places_container">
-		</div>
+		
 	</div>
 </template>
 
@@ -23,15 +24,20 @@ export default {
 	name: 'Timeline',
 	data: function() {
 		return {
+			timeline: {
+				height: 0
+			},
 			projects: [
 				{
 					title: "You're being followed",
 					subtitle: "An augmented reality puzzle about the state of internet privacy",
 					period: {
-						start: "",
-						end: ""
+						start: new Date("2019/02/04"),
+						end: new Date("2019/03/29")
 					},
 					importance: 0,
+					place: "hku",
+					top: 0,
 					content: [
 						{
 							type: "text",
@@ -56,7 +62,34 @@ export default {
 			]
 		}
 	},
+	created: function() {
+		this.render_timeline();
+	},
 	methods: {
+		render_timeline() {
+			for (var i=0; i<this.projects.length; i++) {
+				var project = this.projects[i];
+				project.top = 30;
+			}
+		},
+		compare_start_dates(a, b) {
+			if (a.period.start < b.period.start)
+				return -1;
+			if (a.period.start > b.period.start)
+				return 1;
+			return 0;
+		},
+		compare_end_dates(a, b) {
+			if (a.period.end < b.period.end)
+				return -1;
+			if (a.period.end > b.period.end)
+				return 1;
+			return 0;
+		},
+		generate_timeline() {
+			// Generate the timeline div that shows the dates
+			var min = this.projects.sort(c)
+		}
 	},
 	props: {
 		
@@ -65,4 +98,24 @@ export default {
 </script>
 
 <style scoped>
+
+#timeline_container {
+	display:grid;
+	grid-template-columns:200px 50px auto;
+}
+
+#projects_container {
+	position:relative;
+}
+
+#dates_container {
+	background-color:gray;
+}
+
+.project_container {
+	position:absolute;
+	background-color:gainsboro;
+}
+
+
 </style>

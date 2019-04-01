@@ -1,11 +1,11 @@
 <template>
 	<div id="information_container">
 		<div id="photo_container">
-			<img src="./../assets/photo.jpg">
+			<!--<img src="./../assets/photo.jpg">-->
 		</div>
 		<div id="about_container">
 			<h1>Arjo Nagelhout</h1>
-			<p>The one thing you need to know about me is that I'm crazy enthusiastic about augmented reality. </p>
+			<p>I am a designer. </p>
 		</div>
 		<div id="navigation_container">
 			<div class="navigation_element" v-for="navigation_element in navigation_elements" :key="navigation_element.id">
