@@ -8,7 +8,7 @@
 			<p>The one thing you need to know about me is that I'm crazy enthusiastic about augmented reality. </p>
 		</div>
 		<div id="navigation_container">
-			<div v-for="navigation_element in navigation_elements" :key="navigation_element.id">
+			<div class="navigation_element" v-for="navigation_element in navigation_elements" :key="navigation_element.id">
 			
 				<a v-bind:href="navigation_element.url" :target="get_target(navigation_element)">{{navigation_element.text}} →</a>
 
@@ -60,10 +60,6 @@ export default {
 	grid-template-columns: 200px auto 200px;
 	max-width:800px;
 	margin:auto;
-}
-
-#information_container div {
-	border:1px solid black;
 }
 
 img {
