@@ -1,0 +1,90 @@
+$primary_color: #ff4d00;
+$font-1-stack: brandon-grotesque, sans-serif;
+$font-2-stack: minion-3, serif;
+
+* {
+	margin:0;
+	padding:0;
+}
+
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-size:16px;
+	-webkit-text-size-adjust: 100%;
+	perspective: 10px;
+	transform-style: preserve-3d;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.wrapper {
+	height:2000px;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; 
+	/* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+/* TEXT STYLES */
+
+.type_title {
+	font-family: $font-1-stack;
+	font-size: 3.306em;
+	font-weight: 900;
+}
+
+.type_subtitle {
+	font-family: $font-2-stack;
+	font-size: 1.188em;
+	font-weight: 700;
+	font-style: italic;
+
+	letter-spacing: 0.1em;
+
+
+}
+
+.type_paragraph {
+	font-family: $font-2-stack;
+	font-size: 0.750em;
+	font-weight: 600;
+	font-style: italic;
+
+	line-height: 1.200em;
+
+
+}
+
+.type_page_title {
+	font-family: $font-2-stack;
+	font-size: 1.188em;
+	font-weight: 700;
+	font-style: italic;
+
+	letter-spacing: 0.1em;
+}
+
+.type_project_title {
+	font-family: $font-2-stack;
+	font-size: 2.639em;
+	font-weight: 600;
+	font-style: italic;
+}
+
+.type_project_date {
+	font-family: $font-2-stack;
+	font-size: 1.128em;
+	font-weight: 600;
+	font-style: italic;
+}
