@@ -22,8 +22,8 @@ export default {
 			projects: []
 		}
 	},
-	created: function() {process.env.BASE_URL
-		fetch(+"projects.json")
+	created: function() {
+		fetch(process.env.BASE_URL+"projects.json")
 			.then(r => r.json())
 			.then(json => {
 				this.projects = this.interpret_projects(json.projects);
@@ -42,8 +42,8 @@ export default {
 			
 			// Add rendering information to project
 			projects_out.map(function callback(project) {
-				
-				// Set dates
+
+				// Set display date
 				if ('single' in project.time) {
 					project.display_date = convert_date(project.time.single);
 				} else {

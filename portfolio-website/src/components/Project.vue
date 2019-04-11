@@ -9,7 +9,6 @@
 				<p class="type_paragraph project_description">{{description}}</p>
 			</div>
 		</div>
-		<img v-for="image in images" v-bind:src="image_path(image)"/>
 	</div>
 </template>
 
@@ -35,6 +34,7 @@ export default {
 .project_container {
 	width:100%;
 	height:140px;
+	display:grid;
 }
 
 .project_text {
